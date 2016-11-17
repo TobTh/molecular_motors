@@ -1,0 +1,60 @@
+\section{Verwendete Methoden}
+Es wird sich in dieser Ausarbeitung mit der geometrischen Optik außeinandergesetzt. Das bedeutet dass die verwendeten Linsen als dünn (Brennweite >> Linsendicke ), und die Lichtstrahlen als dünne parallele Linien angeneommen werden.
+Alle hier aufgezeigten Methoden werden verwendet um Brennweiten verschiedener Linsensysteme zu bestimmen.
+Die Brennweite bezeichnet jene Entfernung auf der optischen Ache von der Linsenmitte,
+bei dem sich die Objektseitigen alle Schneiden. 
+
+\subsection{Autokollimation}
+Bei der Methode der Autokollimation passiert das Licht ein Gitter und wird nach der Linse gespiegelt, passiert erneut die Linse und wird auf einen Schirm direkt neben dem Gitter abgebildet. Anhand der Entfernung des Spiegels von der Linse lässt sich der Brennpunkt bestimmen. 
+Da die einzelnen Linsen in unseren Versuchen als symmetrisch angenommen werden, wird aus dem  gemessenen rechtsseitige Brennpunksabstand $k$ und dem linksseitigen Brennpunkstabstand $l$ der Mittelwert gebildet.
+Die Messmethode der Autokollimation wird nur dann allein verwendet, wenn eine Linse vernachlässigbar dick ist.
+Für die Bestimmung der Brennweite eines Linsensystems wird die Autokollimation als Hilfsmethode verwendet.
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.8\textwidth]{bilder/Autokollimation.png}
+  \caption{Bezeichnungen für die Methode der Autokollimation}
+  \label{fig:bessel}
+\end{figure}
+
+\subsection{Besselmethode}
+Für Linsensysteme wird die Messmethode nach Bessel gemeinsam mit der Autokollimation verwendet. \ref{fig:bessel}
+Sobald der Abstand zwischen Objekt und Bild ausreichend groß ist, gibt es zwei Positionen für das Linsensystem,
+bei denen ein scharfes reelles Bild entsteht.
+Aus dieser Information, und den links- und rechsseitigen Brennweiten $k$ und $l$ von der Methode der Autokollimation 
+lässt sich die Brennweite und der Hauptebenenabstand mit den Gleichungen \ref{eq:bessel_f} und \ref{eq:bessel_h} errechnen.
+\begin{equation}
+  f' = \frac{1}{2} \cdot \sqrt{(e-k-l)^2 - d^2}\\
+  \label{eq:bessel_f}
+\end{equation}
+\begin{equation}
+  h = k + l - \sqrt{(e-k-l)^2 - d^2}
+  \label{eq:bessel_h}
+\end{equation}
+\begin{figure}[]
+  \centering
+  \includegraphics[width=0.8\textwidth]{bilder/Bessel.png}
+  \caption{Besselmethode}
+  \label{fig:bessel}
+\end{figure}
+
+\subsection{Methode nach Abbe}
+Bei der Methode nach Abbe werden bei verschiedenen Abständen zwischen Bild und Abbild der Vergrößerungsmaßstab gemessen. 
+Aus der Abbildung \ref{fig:abbe} lässt sich die Variablenbezeichnung ablesen. Es wird $\beta = \sfrac{y'}{y}$ als Abbildungsmaßstab bezeichnet. Gemessen wurden $g$ und $g'$ über die Positioinen des Gitters und des Schirms. Für die Berechnung der Brennweite und des Hauptebenenabstandes des Systems wurden zwei mit den Formeln aus Gleichung \ref{eq:Abbe}.
+\begin{equation}
+  g = f \cdot (1-\frac{1}{\beta}) + h_1 \ \ \ \  g' = f' \cdot (1-\beta) + h_2
+  \label{eq:Abbe}
+\end{equation}
+
+\begin{figure}[]
+  \centering
+  \includegraphics[width=0.8\textwidth]{bilder/Abbe.png}
+  \caption{Methode nach Abbe}
+  \label{fig:abbe}
+\end{figure}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Optik"
+%%% End:

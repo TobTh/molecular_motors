@@ -1,0 +1,23 @@
+\section{Berechnung der Messunsicherheiten}
+Alle systematischen  Fehler wurden mit  der Formel \ref{equ:syserr} und alle statistischen Fehler wurden teils von Origin errechnet und teils unter Verwendung der Formel \ref{equ:staterr} berechnet.
+Die Standartabweichung wurde nach Formel \ref{eq:sigma} bestimmt, wobei $tilde{x}$ dem Mittelwert und $N$ der gesamtzahl der Messungen.j
+\begin{equation}
+    \sigma_{f(x_1,x_2,...)} = \sum\limits_{i=1}^n \abs{\frac{\partial f}{\partial x_i}\cdot \sigma_{x_i}}
+    \label{equ:syserr}
+\end{equation}
+\begin{equation}
+    \sigma_{f(x_1,x_2,...)} = \sqrt{\sum\limits_{i=1}^n (\frac{\partial f}{\partial x_i} \cdot \sigma_{x_i})^2}
+    \label{equ:staterr}
+\end{equation}
+\begin{equation}
+  \label{eq:sigma}
+  \sigma_x = \sqrt{\sum \frac{(x-\tilde{x})^2}{N-1}}
+\end{equation}
+
+
+\subsection{Unicherheiten bei der Methode der Autokollimation}
+Da das Lineal eine Messkala von 1mm hat, wurde einmal die statistische Unischerheit auf 0,5 mm und auch die systematische Unsicherheit auf 0,5mm angenommen. Da an zwei Punkten gemessen wurde, gab es zwei statistische Messfehler. Durch die Bildung der Differenz entfiel der systematische Fehler. Damit ergibt sich für die Berechnung des Gesamtfehlers \ref{eq:bw}:
+\begin{equation}
+  \label{eq:bw}
+  \sigma_{Brennweite} = \sqrt{\sigma_x^2 + 2(0.05cm^2)}
+\end{equation}

@@ -1,0 +1,4 @@
+import numpy as np
+import pandas
+
+concentrations = [5, 10, 20, 50, 100, 400, 1000, 2000]

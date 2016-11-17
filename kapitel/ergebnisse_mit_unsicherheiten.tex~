@@ -1,0 +1,102 @@
+\section{Experimentelles Vorgehen und Ergebnisse}
+Als erstes wurde die Krümmung der verwendeten Linsenarten bestimmt. Dabei waren die Linsen A,B,C,G,H Sammellinsen, und die Linsen D und E waren Streulinsen. 
+\subsection{Methode der Autokollimation}
+Mithilfe der Methode der Autokollimation wurde der Brennpunkt der für einzelne Sammellinsen bestimmt. 
+Es wurde immer die Gitterposition und die Position der Linse bei einer Messung bestimmt. 
+Dabei wurde die Gitterposition bei 20cm konstant gehalten. 
+Aus der Differenz der Gitterposition und der Linsenposition wurde deren Abstand bestimmt. 
+Es wurden für jede Seite der Linse jeweils 5 Messungen durchgeführt. Da die Linsen als symmetrisch angenommen wurden, 
+wurde ein Mittelwert mit Standartabweichung für die Brennweite der Linse gebildet. 
+Die Werte der Bennpunkte
+sind in der Tabelle \ref{tbl:autokollimation} zu sehen.
+\begin{center}
+	\begin{table}[h!]
+		\centering
+		\begin{tabular}{ | l | l | l | l | l | }
+                  \hline
+                  Linsen & B & C & D & G \\ \hline
+                  Brennpunkt in cm & $9,9 \pm 0,1$ & $20,1 \pm 0,1$ & $52,1 \pm 0,2 $ & $7,4 \pm 0,2$   \\ \hline
+		\end{tabular}
+		\caption{Brennpunkte ausgewählter Linsen}
+		\label{tbl:autokollimation}
+	\end{table}
+\end{center}
+
+Zudem wurde die Methode der Autokollimation auch auf das Linsensystem angewandt, bei dem die Linsen E und B in einem Abstand von 5cm, dem Hauptebenenabstand, hintereinander angebracht waren und die Reihenfolge durchgewechselt wurde. Die mit der Methode der Autokollimation bestimmte rechtsseiteige Brennweite k ist $14,8 \pm 0.2 cm $ und die Linksseitige Brennweite l ist $28.4 \pm 0,2 cm$.
+
+\subsection{Besselverfahren}
+Aus den beiden Fokuspunkten ließen sich die Brennweiten des Systems errechnen. Das Gitter stand an einer Position von $20.0 \pm 0,1cm$.
+Die Linsen B und E wurden in einem Abstand von $5,0 \pm 0,1 cm$ voneinander zu einem Linsensystem montiert.
+Die gemessenen und gemittelten Positionen der Linsensysteme $111,2 \pm 0,2 cm$ und $33,4 \pm 0,2 cm$. Gemessen wurde an der Linse $E$, durch die das Licht als erstes gefallen ist.
+Mithilfe der Gleichungen \ref{eq:bessel_f} und \ref{eq:bessel_h} wurden mithilfe der absoluten Fehlerfortpflanzung die Werte für $h = 4,2 \pm 1,1 cm$ und $f' = 19,4 \pm 0,7 cm$ bestimmt.
+
+\subsection{Methode nach Abbe}
+Der Schirm wurde in einem Abstand von $140,0 \pm 0,2 cm$ vom Gitter aufgestellt und die Linse so verschoben dass am Schirm ein scharfes Bild entstanden ist. Das Gitter wurde bei $10 \pm 0.1$ cm positioniert.
+Die Position des Linsensystems und die Kästchengröße des Abbildes des Gitters wurden vermerkt. 
+Danach wurde der Schirm wurde um 1 cm näher zum Gitter verschoben. Dieser Vorgang wurde 15 mal wiederholt. 
+Die Positionsunsicherheit für ein scharfes Bild betrugen $\pm 0,5 cm$, 
+da man im Bereich eines Zentimeters die Schärfe des Bildes nicht sonderlich verändert hat.
+Um die Brennweiten und die Hauptebenenabstände des Linsensystems zu bestimmen wurden zwei Lineare Fits durchgeführt: \\
+von $g$ gegen $(1-\beta)$ und von $g'$ gegen $(1-\sfrac{1}{\beta})$. 
+\[
+f = 20,5 \pm 0,6 cm \ \ \ \ h = 6,4 \pm 3,1 cm 
+\]
+\[
+f' = -22,6 \pm 1,6 cm \ \ \ \ h' = 14,7 \pm 2,0 cm
+\]
+Nach Bildung der Betragsdifferenz zwischen $h$ und $h'$ um den Hauptebenenabstand auszurechnen erhält man $\Delta h = 8.3 \pm 3.7$.
+Hier ist zu beachten dass der große Fehler von der hohen prozentuellen ungenauigkeit von $(1 - \beta)$ und $(1 - \sfrac{1}{\beta})$ kommt. 
+Da $h$ und $h'$ positiv sind, bedeutet es nach der Vorzeichenkonvention, dass die Hauptebenen rechts von der fiktiven Ebene des Linsensystems liegen.
+\begin{figure}[]
+  \centering
+  \includegraphics[width=0.8\textwidth]{bilder/g_.png}
+  \caption{Linearer Fit von $g$ über  $(1-\sfrac{1}{\beta})$}
+  \label{fig:abbe}
+\end{figure}
+\begin{figure}[]
+  \centering
+  \includegraphics[width=0.8\textwidth]{bilder/g_strich.png}
+  \caption{Linearer Fit von $g'$ über$(1-\beta)$}
+  \label{fig:abbe}
+\end{figure}
+
+
+\subsection{Brennweite der Zersteuungslinse}
+Zur Berechnung der Brennweite der Zerstreuungslinse des Systems werden folgende Gleichungen benötigt: 
+\[
+  \Delta = t - f_1' - f_2' \ , \ \ f' = \frac{f_1' \cdot f_2'}{\Delta} \ \ \
+\rightarrow f_2' = \frac{f'(t - f_1')}{f' - f_1'}
+\]
+t gibt den Abstand der beiden Linsen an, der in unserem Fall $5 \pm 0.1$ cm ist.
+Es ist $f_1' > 0$ und $f_2' < 0$, wobei die Brennweite der Linse B bereits 
+mithilfe der Autokollimation mit $f_1' = 9,95 \pm 0,13 cm$ gemessen wurde.  
+\[
+  f'_{2,Abbe} = (-9,6 \pm 0,6) cm \ \ \ \ \ f'_{2,Bessel} = (-10,1 \pm 0,7) cm
+\]
+Vergleicht man diese Werte mit den vom Hersteller angegebenen Wert von 100mm, 
+stimmen die Zahlen innerhalb der Messunsicherheiten überein.
+
+\subsection{Hauptebenen}
+Anschließend wurden die Hauptebenen des Linsensystems berechnet, 
+wobei z und z' die Abstände der Hauptebene E sind. 
+Hierzu benötigen wir folgende Gleichungen, 
+mit $t = 5 \pm 0,1 cm$ und der Herstellerangabe $f_2' = -10 cm$. 
+\[
+  z' + t = h_2 = \sfrac{(f_2'\cdot t)}{\Delta} + t
+\]
+\[
+  h = \sfrac{t^2}{\Delta}
+\]
+\[
+  h_1 = -\sfrac{(f_1' \cdot t)}{\Delta}
+\]
+Hieraus ergeben sich folgende Werte:
+
+\[
+  h_1 = (-9,85 \pm 0,6) cm, \ \ \ h_2 =(-4,9 \pm 0,4) cm, \ \ \ h = (4,95 \pm 0,2) cm
+\]
+
+%%% local Variables:
+%%% mode: latex
+%%% TeX-master: "../Optik"
+%%% End:
