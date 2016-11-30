@@ -72,7 +72,7 @@ def main():
     axis.yaxis.grid(True, which='major')    
     axis.xaxis.grid(True, which='major')    
     plt.xlabel(r"Konzentration in mMol")
-    plt.ylabel(r"$v$ in $\frac{\mu m}{s}$")
+    plt.ylabel(r"$v$ in $\mu m$ pro $s$")
     figure.savefig("../bilder/both_fits.", bbox_inches='tight')
 
     x = 1/concentrations
@@ -116,7 +116,7 @@ def main():
     plt.xlabel(r"Konzentration in mMol")
     plt.ylabel(r"$v$ in $\frac{1}{v}$")
     figure.savefig("../bilder/both_fits_1over.", bbox_inches='tight')
-       
+        
     
 if __name__ == "__main__":
     main()
