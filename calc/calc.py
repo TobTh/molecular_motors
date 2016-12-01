@@ -10,10 +10,11 @@ from matplotlib.ticker import MultipleLocator, FormatStrFormatter
 
 from Measurement import LinFit
 
+# I assumed a 5% concentration error, created by liquid preparation
 concentrations = np.array([5.0, 10.0, 20.0, 50.0, 100.0, 400.0, 1000.0, 2000.0])
 pixellength = 1.57
 
-pixels = np.array([7.0 , 17.18, 21.90, 88.71, 133.73, 170.68, 170.44, 134.93])
+pixels = np.array([7.5 , 17.18, 21.90, 88.71, 133.73, 170.68, 170.44, 134.93])
 speeds  = pixels  * pixellength/10 # division by 10 for runtime of experiment
 pixel_distance_errors = np.array([1.27, 3.92, 3.60, 6.07, 15.23, 13.39, 21.25, 14.15]) + 2*pixellength
 speed_errors = pixel_distance_errors * pixellength/10  # division by 10 for runtime of experiment
@@ -43,16 +44,30 @@ def get_fitted_arrays(fit_params, func, arange):
     x_es = arange
     y_es = map(new_func, x_es)
     return(x_es, y_es)
-        
+
+def Km_and_vMax_from_linear_fit_values(values, errors):
+    m = values[0]
+    m_err = errors[0]
+    t = values[1]
+    t_err = errors[1]
+
+    Km = m/t
+    Km_error = math.sqrt((m_err/t)**2 + (m*t_err/t**2)**2)
+    vmax = 1/t
+    vmax_err = t_err/t**2
+
+    return((Km, vmax),(Km_error, vmax_err))
+
+
 def main():
     v_of_s = lambda S, vmax, Km: (vmax * S)/(Km + S)
 
-    names = ("vmax", "Km")
+    names = ("vmax direct formula fit", "Km direct formula fit")
     (all_values, all_errors) = fit_formula(concentrations, speeds, v_of_s)
     print_two_values(names, all_values, all_errors)
 
     (but_one_values, but_one_errors) = fit_formula(np.delete(concentrations, -1), np.delete(speeds, -1), v_of_s)
-    print_two_values(("vmax but one", "Km but one"), but_one_values, but_one_errors)
+    print_two_values(("vmax without last, direct formula fit", "Km without last, direct formula fit"), but_one_values, but_one_errors)
     
     (x_es , y_es) = get_fitted_arrays(all_values, v_of_s, np.linspace(-10, 2150))
     (x_es_but_one, y_es_but_one) = get_fitted_arrays(but_one_values, v_of_s, np.linspace(-10, 2150))
@@ -63,7 +78,7 @@ def main():
     axis = figure.add_subplot(111)
     plt.xlim(-50, 2150)
     minorLocator1 = AutoMinorLocator()
-    axis.plot(x_es, y_es , 'r-', label = "Fit mit allen Werten")
+    axis.plot(x_es, y_es , 'r--', label = "Fit mit allen Werten")
     axis.plot(x_es_but_one, y_es_but_one , 'g-', label = "Fit ohne letzten Wert")
     axis.yaxis.set_minor_locator(minorLocator1)
     axis.errorbar(concentrations, speeds, xerr = concentrations * 0.05, yerr =  speed_errors, fmt = 'b^', label = "Konzentration in mmol")
@@ -81,24 +96,15 @@ def main():
     (values, errors) = fit_formula(x, y, linfit)
     print_two_values(("Km/vmax", "1/vmax"), values, errors)
 
-    m = values[0]
-    m_err = errors[0]
-    t = values[1]
-    t_err = errors[1]
-
-    Km = m/t
-    Km_error = math.sqrt((m_err/t)**2 + (m*t_err/t**2)**2)
-    print_error("Km", Km, Km_error)
-    print("\n"),
-
-    vmax = 1/t
-    vmax_err = t_err/t**2
-    print_error("vmax", vmax, vmax_err)
-    print("\n")
+    KM_vmax, Km_vmax_errors = Km_and_vMax_from_linear_fit_values(values, errors)
+    print_two_values(("Km linfit", "vmax linfit"), KM_vmax, Km_vmax_errors)
     
     (but_one_values, but_one_errors) = fit_formula(np.delete(x, -1), np.delete(y, -1), linfit)
     print_two_values(("Km/vmax without last","1/vmax without last"), but_one_values, but_one_errors)
-    
+
+    KM_vmax, Km_vmax_errors = Km_and_vMax_from_linear_fit_values(but_one_values, but_one_errors)
+    print_two_values(("Km without last linfit", "vmax without last linfit"), KM_vmax, Km_vmax_errors)
+          
     (x_es , y_es) = get_fitted_arrays(values, linfit, np.linspace(-0.025, 0.25))
     (x_es_but_one, y_es_but_one) = get_fitted_arrays(but_one_values, linfit, np.linspace(-0.025,0.25))
 
@@ -107,8 +113,7 @@ def main():
     figure.set_size_inches(plotsize_x,plotsize_y)
     axis = figure.add_subplot(111)
     minorLocator1 = AutoMinorLocator()
-    axis.plot(x_es, y_es , 'r-', label = "Fit mit allen Werten")
-    axis.plot(x_es_but_one, y_es_but_one , 'g-', label = "Fit ohne letzten Wert")
+    axis.plot(x_es, y_es , 'r--', label = "Fit mit allen Werten")
     axis.yaxis.set_minor_locator(minorLocator1)
     axis.errorbar(x, y, xerr=x_err, yerr = y_err, fmt = 'b^', label = r"$\frac{1}{S}$")
     axis.legend(loc="best")
