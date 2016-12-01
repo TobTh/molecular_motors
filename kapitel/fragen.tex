@@ -23,17 +23,20 @@ des Abgestrahlten Lichtes kleiner. Das wird schematisch in Abbildung
 \end{figure}
 
 \section{Zusammenhang zwischen numerischer Apertur und Auflösungsgrenze}
-Die Auflösungsgrenze eines Mikroskopes ist durch die numerische Aptertur $N_{A}$ gegeben,
-einer dimensionslosen Zahl, die abhängig von der Wellenlänge den minimalen noch zu messenden
-Abstand zwischen zwei Lichtpunkten angibt. Wenn das Licht senkrecht auf die Linse einfällt
-lautet der minimale Abstand $d_{min}$:
-\begin{equation}
-  d_{min} = \frac{1.22 \lambda}{N_{A}}
-\end{equation}
-Als Fausregel merkt man sich $d_{min} \approx \frac{ \lambda}{N_{A}}$, da
-der Vorfaktor vom Einfallswinkel des Lichts auf die Linse abhängt.
+Um die Bewegung der Aktinfilamente in diesem Versuch zu beobachten, werden diese mit einem am Pilzgift Phalloidin gebundenen Farbstoff markiert.\\
+Der hier zu beobachtende Effekt ist die Fluoreszenz. Atome fluoreszierender Stoffe werden durch Absorption von Photonen einer bestimmten Wellenlänge angeregt und beim Übergang in den Grundzustand wird ein Photon emittiert. In der Regel ist das emittierte Licht langwelliger als das eingestrahlte, dies lässt sich wie folgt erklären:\\
+Bei der Anregung des Elektrons werden höhere Schwingungszustände des angeregten Zustands besetzt und ein Teil der Energie des anregenden Photons wird bei Schwingungsrelaxationen abgegeben. Zudem werden beim Zurückfallen des Elektrons in den Grundzustand auch zunächst höhere Schwingungszustände des Grundzustands besetzt. Diese Prozesse bedingen eine größere Wellenlänge des emittierten Lichts als die des absorbierten.\\
+\\
+Die Auflösung eines Objekts mithilfe eines Mikroskops wird zum einen von der Wellenlänge des bestrahlenden Lichts und zum anderen von der numerischen Apertur des benutzten Objektivs bestimmt. Strukturen, die kleiner sind als die verwendete Wellenlänge können nicht aufgelöst werden.\\
+Die Auflösungsgrenze $d_{min}$ kann mit dem Rayleigh-Kriterium berechnet werden:
+\begin{equation*}
+d_{min}=\frac{1.22}{2}\cdot \frac{\lambda}{NA}
+\label{eq:floureszenz}
+\end{equation*}
+\\
+Als Fausregel merkt man sich $d_{min} \approx \frac{ \lambda}{N_{A}}$.\\
 Hätten wir in unserem Versuch ein Auficht, oder ein Druchlichtmikroskop
-für die Analyse der Aktingeschwindigkeit verwendet, hätten wie bei blauem
+für die Analyse der Aktingeschwindigkeit verwendet, hätten wir nach Gleichung \ref{eq:floureszenz} bei blauem
 Licht mit $ \lambda = 488nm$ und der im Versuch gegebenen Linse eine
 Auflösungsgrenze von 180 nm. \\
 Die Auflösung des Floureszenzmikroskops beträgt $1.57 \sfrac{\mu m}{\text{Pixel}}$.

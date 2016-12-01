@@ -1,1 +1,67 @@
-\section{Verwendete Methoden}
+
+\section{Grundlagen}
+\subsection{Muskelaufbau}
+Eine Vergrößerung des Muskels mithilfe eines Mikroskops zeigt, dass dieser aus sich wiederholenden Einheiten, den Sarkomeren, besteht. Ein Sarkomer erstreckt sich zwischen zwei sogenannten Z-Scheiben. Zudem erkennt man optisch dichtere Zonen, genannt A-Band, die aus Myosin-Filamenten und optisch weniger dichte Zonen, I-Band, welche aus Aktin-Filamenten bestehen. An den Übergängen vom A- zum I-Band überlappen sich Myosin- und Aktin-Filamente.
+\subsection{Aktin}
+Aktin ist ein kugelförmiges Strukturprotein mit einer zentral gelegenen Bindungstasche für Adenosintriphosphat, ATP.\\
+Oberhalb einer kritischen Konzentration polymerisiert monomeres Aktin, G-Aktin, zu spiralförmigen Polymeren, F-Aktin und umgekehrt.
+\subsection{Myosin}
+Myosin ist ein Motorprotein, das an der Umwandlung von chemischer Energie in mechanische Energie beteiligt ist.\\
+Das Dimer Myosin-II besteht aus zwei schweren Ketten, die die Motordomäne bilden und vier leichten Ketten aus Aminosäureketten. Myosin besitzt Fortsätze, die ihren Winkel zum Rest des Moleküls verändern können, diese sogenannten Köpfchen binden an Aktin-Filamente.\\
+Da Myosin-II auch Polymere, sogenannte Minifilamente, ausbilden kann, wird im Versuch eine verkürzte Form des Myosin-II, das schwere Meromyosin (HMM), verwendet.
+\subsection{Chemomechanischer Zyklus des Myosin}
+Durch hydrolytische Spaltung der energiereichen Phosphatbindung des ATP mithilfe von Enzymen wird Energie freigesetzt, die vom Myosin in mechanische umgewandelt werden kann. Dabei entstehen die Produkte ADP und Phosphat.\\
+Im Folgenden wird der chemomechanische Zyklus näher erläutert:\\ 
+\\
+Wird ATP an Myosin gebunden, befindet sich das Köpfchen im $90^{\circ}$ zum Rest des Moleküls. Spaltet das Myosin-Köpfchen die Bindung des ATP zu ADP und Phosphat, kann es seine räumliche Struktur verändern, d.h. nach Freisetzung des am Myosin-Köpfchen anliegenden Phosphats und kurz danach des Adenosindiphosphats, kippt das Köpfchen um $45^\circ$. Der Zyklus endet mit der erneuten Anlagerung von ATP am Myosin, wodurch sich das Köpfchen vom Aktin-Filament wieder löst.\\
+Aufgrund dieser zyklisch abwechselnden Konformationsänderung kommt es effektiv zur Kontraktion des Muskels.
+\noindent Zur Lösung des Myosin-Köpfchen vom Aktin-Filament wird also Energie in Form von ATP benötigt. Steht diese nicht mehr zur Verfügung, können sich die Moleküe nicht mehr voneinander lösen und es kommt zur Totenstarre.
+\subsection{Michaelis-Menten-Kinetik}
+Die Michaelis-Menten-Gleichung beschreibt unter bestimmten Annahmen die hyperbolische Abhängigkeit der Enzymaktivität von der Substratkonzentration.\\
+Folgende Bezeichnungen werden gebraucht:\\
+\begin{equation*}
+\begin{aligned}
+\text{[E]}=&\text{Konzentration des Enzyms Myosin-II}\\
+\text{[S]}=&\text{Konzentration des Substrats ATP}\\
+\text{[ES]}=&\text{Konzentration des Enzym-Substrat-Komplexes Enzym+ATP}\\
+\text{[P]}=&\text{Konzentration der Reaktionsprodukte ADP und Phosphat}  
+\end{aligned}
+\end{equation*}
+Man geht von folgender Reaktionsgleichung aus, wenn [S] $\gg$ [P], da in diesem Fall die Rückreaktion des Produkts vernachlässigt werden kann:
+\begin{equation*}
+E + S \Leftrightarrow[k_1][k_{-1}] ES \rightarrow[k_2] P + E  
+\end{equation*}
+Die Effizienz einer enzymatischen Reaktion wird durch die Produktionsrate $\nu$ bestimmt:
+\begin{equation*}
+\nu=\frac{d[P]}{dt}= k_{2}\cdot [ES]
+\end{equation*}
+Unter der Annahme, dass $\frac{d[ES]}{dt}=0$, d.h. für genügend hohe Substratkonzentrationen ist [ES] der bestimmende Faktor und es resultiert ein Gleichgewicht, ergibt sich die Michaelis-Menten-Gleichung:
+\begin{equation}
+\nu=\frac{\nu_{max}\cdot [S]}{K_{min} + [S]}
+  \label{equ:michaelis_menten}
+\end{equation}
+mit $K_{min}=\frac{k_{-1}+k_2}{k_1}$.\\
+\\
+$\nu$ ist direkt proportional zur Geschwindigkeit der Aktinfilamente.\\
+$K_{min}$ und $\nu_{max}$ bestimmen die Kinetik eines Enzyms abhängig von der Substratkonzentration [S], solange [S] $\gg$ [E]. Diese beiden Parameter sind experimentell bestimmbar.\\
+Hierfür wird die Michaelis-Menten-Gleichung linear transformiert, sodass keine hyperbolische Abhängigkeit mehr auftritt:
+\begin{equation}
+\frac{1}{\nu}=\frac{1}{\nu_{max}}+\frac{K_{min}}{\nu_{max}}\cdot \frac{1}{[S]}
+\end{equation}
+Plottet man die Ergebnisse aus dem Experiment, so erhält man als Abszissenachsenschnittpunkt $-\frac{1}{K_{min}}$ und als Ordinatenachsenschnittpunkt $\frac{1}{\nu_{max}}$. Die Steigung der Geraden entspricht $\frac{K_{min}}{\nu_{max}}$.
+\section{Versuchsdurchführung}
+Für die Durchführung des Versuchs werden acht Durchflusszellen benötigt, die man im Vorfeld vorbereiten muss. Hierbei werden an den Längsseiten eines Mikroskop-Objektträgers jeweils ein dünner Streifen Parafilm$\textsuperscript{\textregistered}$ und darauf ein Deckglas befestigt, das zuvor in einer Nitrozellulose-Lösung getaucht und in einer Abzugshaube getrocknet wurde. Das mit Nitrozellulose beschichtete Deckglas gewährleistet das Anbinden des Myosins am Deckglas.\\
+Der Hohlraum zwischen Objektträger und Deckglas kann nun mit den im Folgenden zusammengestellten Pufferlösungen und Proteinen gespült werden. Genaue Angaben zur Herstellung dieser sollen der Anleitung entnommen werden.\\
+Zu beachten ist, dass alle Proteine auf Eis gelagert werden müssen, um deren Funktionalität sicherzustellen, ebenso alle hergestellten Pufferlösungen.\\
+\\
+Durch eine verdünnte AB-Lösung wird eine Umgebung für das Myosin geschaffen, die der im Körper ähnelt und um zu verhindern, dass Aktinfilamente an dem beschichteten Deckglas hängenbleiben oder mit diesem interagieren, benötigt man eine ABSA-Lösung, die das Protein BSA, beinhaltet. So wird sichergestellt, dass die Aktinfilamente größtenteils nur mit dem Myosin interagiert.\\
+Die Bewegung der Aktinfilamente wird mithilfe eines Floreszenzmikroskops beobachtet, daher sind die Aktinfilamente in diesem Versuch bereits dementsprechend präpariert worden. Um besagte Floureszenzfarbe zu erhalten, wird zudem noch eine GoC-Enzymmischung angefertigt.\\
+Zuletzt müssen die Proteinlösungen HMM und Aktin noch verdünnt werden und mit den oben genannten Bestandteilen kann nun der Motility Buffer mit variierender ATP-Konzentration (2000$ \mu M$, 1000$ \mu M$, 400$ \mu M$, 100$ \mu M$, 50$ \mu M$, 20$ \mu M$, 10$ \mu M$, 5$ \mu M$) jeweils kurz vor jedem Versuch hergestellt werden. Das ATP im Motility Buffer initiiert die Reaktion erst.\\
+\\
+Die Zusammenstellung des Motility Assay, das unter dem Mikroskop ausgewertet werden soll, erfolgt wie im Folgenden beschrieben:\\
+Mit einer Pipette werden $30~ \mu l$ HMM aufgenommen und langsam in den Zwischenraum der gebastelten Kammern gegegeben. Danach werden drei Minuten Wartezeit angesetzt, um dem Myosin Zeit zum Anbinden an das Deckglas zu geben. Nun wird mit $100~ \mu l$ ABSA-Lösung gespült und $30~ \mu l$ Aktin hinzugefügt, gefolgt von einer weiteren zweiminütigen Wartezeit. Danach wird der jeweilige Motility-Buffer mit entsprechender ATP-Konzentration, hinzugefügt.\\
+\\
+Gibt man einen Tropfen Immersionsöl auf das Deckglas, kann man die Bewegung der Aktinfilamente durch das Floureszenzmikroskop erkennen.\\
+Für alle acht Objektträger werden jeweils drei Stellen angeschaut und von diesen jeweils ein Film aufgezeichnet, der in Nachhinein ausgewertet werden soll. Mithilfe dieser Aufzeichnungen kann der zurückgelegte Weg eines Filaments extrahiert und mit Kenntnis des Zeitintervalls die Geschwindigkeit berechnet werden.\\
+\\
+Laut Anleitung sollen zwei zusätzliche Objektträger, einmal ohne Motoren und einmal mit Motoren, aber ohne ATP im Motility Buffer als Negativkontrolle untersucht werden, dies war in unserem Versuch nicht nötig, da wir auswertbare Ergebnisse erhielten. Für den Fall, dass sich die Aktinfilamente unter dem Mikroskop nicht bewegt hätten, wäre es so möglich die Ursache hierfür zu ermitteln.
