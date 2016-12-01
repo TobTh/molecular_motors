@@ -8,3 +8,5 @@ auto/
 *.aux
 *.blg
 *.out
+*.png
+*.pdf
