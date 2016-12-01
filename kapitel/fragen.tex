@@ -1,0 +1,50 @@
+\section{Funktionsweise des flouriszierenden Aktinmarkers}
+Für die Messung der Aktingeschwindigkeit wurde ein floursizierender Marker verwendet.
+Floureszenz beschreibt eine spezielle Art der Abstrahlung von
+Photonen durch einen quantenmechanischen Positionswechel
+eines Elektron in einen energetisch niedrigeren Zustand.
+Für Floureszenz brauch es ein Dreiniveausystem bei dem das
+höchste Energieniveau kurzlebig, und das mittlere Energieniveau
+sehr langlebig ist. Indem man die passende Lichtfrequenz verwendet,
+regt Elektronen in das höchste Energieniveau an,
+von dem sie sich schnell, ohne Photoemission, in das mittlere Niveau abregen.
+In diesem Energieniveau verweilen sie, bis es spontan zu einer 
+Abregung und der damit verbundenen Lichtemission kommt.
+Da die Energiedifferenz zwischen mittlerem und niedrigstem Energieniveau kleiner ist als
+die Energiediffernz zwischen dem niedrigsten und dem höchsten Niveau, ist die Wellenlänge
+des Abgestrahlten Lichtes kleiner. Das wird schematisch in Abbildung
+\ref{fig:dreiniveausystem} verdeutlicht.
+
+\begin{figure}[]
+  \centering
+  \includegraphics[width=\textwidth]{bilder/energieniveauschema.pdf}
+  \caption{Ein Dreiniveausystem für Floureszenz}
+  \label{fig:dreiniveausystem}
+\end{figure}
+
+\section{Zusammenhang zwischen numerischer Apertur und Auflösungsgrenze}
+Die Auflösungsgrenze eines Mikroskopes ist durch die numerische Aptertur $N_{A}$ gegeben,
+einer dimensionslosen Zahl, die abhängig von der Wellenlänge den minimalen noch zu messenden
+Abstand zwischen zwei Lichtpunkten angibt. Wenn das Licht senkrecht auf die Linse einfällt
+lautet der minimale Abstand $d_{min}$:
+\begin{equation}
+  d_{min} = \frac{1.22 \lambda}{N_{A}}
+\end{equation}
+Als Fausregel merkt man sich $d_{min} \approx \frac{ \lambda}{N_{A}}$, da
+der Vorfaktor vom Einfallswinkel des Lichts auf die Linse abhängt.
+Hätten wir in unserem Versuch ein Auficht, oder ein Druchlichtmikroskop
+für die Analyse der Aktingeschwindigkeit verwendet, hätten wie bei blauem
+Licht mit $ \lambda = 488nm$ und der im Versuch gegebenen Linse eine
+Auflösungsgrenze von 180 nm. \\
+Die Auflösung des Floureszenzmikroskops beträgt $1.57 \sfrac{\mu m}{\text{Pixel}}$.
+Bei einer Aktinlänge im Bereich von einigen $\mu m$ \cite{FOPRA_molecular_motors}
+scheint die Auflösung eines gewöhnlichen Mikroskopes besser zu sein.
+Jedoch würde man die Aktinstrukturen nicht erkennen, da es zu viel Streulicht gäbe.
+So ist der Grund für die Verwendung eines Floureszenzmikroskopes der
+deutlich bessere Kontrast des Floureszenzmikroskopes im Vergleich zum Auflicht-,
+oder Durchlichtmikropskop.
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../motors"
+%%% End:

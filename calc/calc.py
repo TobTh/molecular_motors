@@ -14,10 +14,9 @@ concentrations = np.array([5.0, 10.0, 20.0, 50.0, 100.0, 400.0, 1000.0, 2000.0])
 pixellength = 1.57
 
 pixels = np.array([7.0 , 17.18, 21.90, 88.71, 133.73, 170.68, 170.44, 134.93])
-speeds  = pixels  * pixellength/10 
+speeds  = pixels  * pixellength/10 # division by 10 for runtime of experiment
 pixel_distance_errors = np.array([1.27, 3.92, 3.60, 6.07, 15.23, 13.39, 21.25, 14.15]) + 2*pixellength
-speed_errors = pixel_distance_errors * pixellength/10
-real_errors = speed_errors 
+speed_errors = pixel_distance_errors * pixellength/10  # division by 10 for runtime of experiment
 
 plotsize_x = 9
 plotsize_y = 1/1.667 * plotsize_x
@@ -67,7 +66,7 @@ def main():
     axis.plot(x_es, y_es , 'r-', label = "Fit mit allen Werten")
     axis.plot(x_es_but_one, y_es_but_one , 'g-', label = "Fit ohne letzten Wert")
     axis.yaxis.set_minor_locator(minorLocator1)
-    axis.errorbar(concentrations, speeds, xerr = concentrations * 0.05, yerr =  real_errors, fmt = 'b^', label = "Konzentration in mmol")
+    axis.errorbar(concentrations, speeds, xerr = concentrations * 0.05, yerr =  speed_errors, fmt = 'b^', label = "Konzentration in mmol")
     axis.legend(loc="best")
     axis.yaxis.grid(True, which='major')    
     axis.xaxis.grid(True, which='major')    
@@ -76,7 +75,9 @@ def main():
     figure.savefig("../bilder/both_fits.", bbox_inches='tight')
 
     x = 1/concentrations
+    x_err = concentrations * 0.05/(concentrations**2)
     y = 1/speeds
+    y_err = speed_errors/(speeds**2)
     (values, errors) = fit_formula(x, y, linfit)
     print_two_values(("Km/vmax", "1/vmax"), values, errors)
 
@@ -109,12 +110,12 @@ def main():
     axis.plot(x_es, y_es , 'r-', label = "Fit mit allen Werten")
     axis.plot(x_es_but_one, y_es_but_one , 'g-', label = "Fit ohne letzten Wert")
     axis.yaxis.set_minor_locator(minorLocator1)
-    axis.errorbar(x, y, fmt = 'b^', label = r"$\frac{1}{S}$")
+    axis.errorbar(x, y, xerr=x_err, yerr = y_err, fmt = 'b^', label = r"$\frac{1}{S}$")
     axis.legend(loc="best")
     axis.yaxis.grid(True, which='major')    
     axis.xaxis.grid(True, which='major')    
-    plt.xlabel(r"Konzentration in mMol")
-    plt.ylabel(r"$v$ in $\frac{1}{v}$")
+    plt.xlabel(r"1/Stoffmenge in 1/$\mu mol$")
+    plt.ylabel(r"$\frac{1}{v}$")
     figure.savefig("../bilder/both_fits_1over.", bbox_inches='tight')
         
     
