@@ -10,3 +10,4 @@ auto/
 *.out
 *.png
 *.pdf
+*.synctex.gz
