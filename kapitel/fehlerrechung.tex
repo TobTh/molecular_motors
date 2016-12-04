@@ -5,13 +5,13 @@ Bei der Ausmessung Aktingeschwindigkeit wurden mindestens 10 Aktinfasern gewähl
 die sich im Zeitintervall von 10 Sekunden durchgehend bewegt haben.
 Aus den gemessenen Distanzen wurde der Mittelwert, und die Varianz bestimmt.
 \[
-  \text{Pixel}_{\ err} = \sqrt{\sigma} + 2
+  \text{Pixel}_{err} = \sqrt{\sigma} + 2
 \]
 Zu dem Distanzfehler noch der Auflösungsfehler des Mikroskops
 von $2 \cdot \text{Pixellänge}$ aufaddiert. Der Faktor 2 kommt daher,
 dass man am Anfang und am Ende der Aktinfaser den Fehler über eine Pixellänge hat.
 \[
-  v_{err} = \text{Pixel}_{\ err} \cdot \text{Pixellänge} \frac{1}{10s}
+  v_{err} = \frac{\text{Pixel}_{err} \cdot \text{Pixellänge}}{10s}
 \]
 Die Pixellänge wurde uns mit $1.57\sfrac{\mu m}{\text{Pixel}}$ angegeben.
 Der Zeitfehler wurde vernachlässigt.
@@ -21,7 +21,7 @@ $m = \sfrac{K_m}{v_{max}} \pm m_{err}$ und $t = \sfrac{1}{v_{max}} \pm t_{err}$ 
 	\sigma_{f(x_1,x_2,...)} = \sqrt{\sum\limits_{i=1}^n (\frac{\partial f}{\partial x_i} \cdot \sigma_{x_i})^2}
 	\label{equ:staterr}
 \end{equation}
-Mit $K_m = \frac{m}{t}$ und $v_{max} = frac{1}{t}$ und unter Verwendung der
+Mit $K_m = \sfrac{m}{t}$ und $v_{max} = \sfrac{1}{t}$ und unter Verwendung der
 gausschen Fehlerfortpflanzung \ref{equ:staterr} wurden die
 Fehler des Fits mit
 \[
@@ -33,7 +33,8 @@ Fehler des Fits mit
 errechnet.
 Ensprechend wurden die Fehlerwerte für die Fehlerbalken Berechnet.
 Für die Berechnungen und das Plotten der Graphen wurde ein Pythonskript geschrieben.
-Dieses kann auf der Webseite \url{http://www.github.com/JackTheEngineer/molecular_motors/calc} eingesehen werden.
+Dieses kann auf der Webseite \url{https://github.com/JackTheEngineer/molecular_motors}
+im Ordner \texttt{calc/} eingesehen werden.
 
 %%% Local Variables:
 %%% mode: latex
