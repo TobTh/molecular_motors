@@ -20,8 +20,10 @@ pixel_distance_errors = np.array([1.27, 3.92, 3.60, 6.07, 15.23, 13.39, 21.25, 1
 speed_errors = pixel_distance_errors * pixellength/10  # division by 10 for runtime of experiment
 
 plotsize_x = 9
-plotsize_y = 1/1.667 * plotsize_x
+plotsize_y = 1/1.667 * plotsize_x # golden ratio for good looking graphs
 
+# This defines the functions for the fits
+# generally lambda says : "here's a function with following arguments"
 v_of_s = lambda S, vmax, Km: (vmax * S)/(Km + S)
 linfit = lambda x, m, t: (x*m + t)
 
@@ -99,14 +101,7 @@ def main():
     KM_vmax, Km_vmax_errors = Km_and_vMax_from_linear_fit_values(values, errors)
     print_two_values(("Km linfit", "vmax linfit"), KM_vmax, Km_vmax_errors)
     
-    (but_one_values, but_one_errors) = fit_formula(np.delete(x, -1), np.delete(y, -1), linfit)
-    print_two_values(("Km/vmax without last","1/vmax without last"), but_one_values, but_one_errors)
-
-    KM_vmax, Km_vmax_errors = Km_and_vMax_from_linear_fit_values(but_one_values, but_one_errors)
-    print_two_values(("Km without last linfit", "vmax without last linfit"), KM_vmax, Km_vmax_errors)
-          
     (x_es , y_es) = get_fitted_arrays(values, linfit, np.linspace(-0.025, 0.25))
-    (x_es_but_one, y_es_but_one) = get_fitted_arrays(but_one_values, linfit, np.linspace(-0.025,0.25))
 
     # Plot plot with two fits  
     figure = plt.figure()
